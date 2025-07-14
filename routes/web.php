@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/registers/{register}', [RegisterController::class, 'destroy'])->name('registers.destroy');
 
     Route::get('subjects/{subject}/classrooms', [\App\Http\Controllers\SubjectController::class, 'classrooms'])->name('subjects.classrooms');
-
+    Route::get('/classrooms/{classroom}/qrcode', [ClassroomController::class, 'generateQrCode'])->name('classrooms.qrcode');
 });
 
 require __DIR__.'/auth.php';

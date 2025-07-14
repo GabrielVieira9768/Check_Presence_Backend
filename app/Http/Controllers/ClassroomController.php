@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Str;
 
 class ClassroomController extends Controller
 {
@@ -44,4 +46,25 @@ class ClassroomController extends Controller
         $classroom->delete();
         return response()->noContent();
     }
+
+    public function generateQrCode(Classroom $classroom)
+    {
+        if ($classroom->subject->teacher_id !== auth()->id()) {
+            abort(403, 'Acesso negado.');
+        }
+
+        // Gera a senha apenas se ainda não existir
+        if (!$classroom->password) {
+            $senha = $classroom->code . '-' . Str::random(6);
+            $classroom->password = $senha;
+            $classroom->save();
+        } else {
+            $senha = $classroom->password;
+        }
+
+        $qrCodeSvg = QrCode::size(300)->generate($senha);
+
+        return view('subjects.qrcode', compact('qrCodeSvg', 'classroom', 'senha'));
+    }
+
 }

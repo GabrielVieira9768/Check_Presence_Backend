@@ -58,10 +58,20 @@
 
         @foreach ($subject->classrooms as $classroom)
             <div class="bg-white p-6 shadow-sm rounded-lg mb-4">
-                <h3 class="text-md font-bold">
-                    Aula: {{ $classroom->code }} — {{ $classroom->date->format('d/m/Y') }}
-                    ({{ \Carbon\Carbon::parse($classroom->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($classroom->end_time)->format('H:i') }})
-                </h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-md font-bold">
+                        Aula: {{ $classroom->code }} — {{ $classroom->date->format('d/m/Y') }}
+                        ({{ \Carbon\Carbon::parse($classroom->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($classroom->end_time)->format('H:i') }})
+                    </h3>
+
+                    {{-- Botão Gerar QR Code --}}
+                    <a href="{{ route('classrooms.qrcode', $classroom->id) }}">
+                        <x-primary-button>
+                            Gerar QR Code
+                        </x-primary-button>
+                    </a>
+                </div>
+
                 <p class="text-sm text-gray-600">Local: {{ $classroom->location ?? 'Não informado' }}</p>
 
                 <h4 class="font-semibold mt-4">Frequência dos Alunos:</h4>

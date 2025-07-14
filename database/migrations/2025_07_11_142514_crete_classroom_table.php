@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();
+            $table->string('password')->nullable(); // Nova coluna para a senha da aula
             $table->timestamps();
         });
     }

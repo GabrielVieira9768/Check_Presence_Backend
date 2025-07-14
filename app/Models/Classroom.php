@@ -13,6 +13,7 @@ class Classroom extends Model
         'location',
         'start_time',
         'end_time',
+        'password',
     ];
 
     protected $casts = [
