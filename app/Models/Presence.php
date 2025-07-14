@@ -16,6 +16,7 @@ class Presence extends Model
         'user_id',
         'status',
         'date',
+        'regisred_at',
     ];
 
     protected $casts = [

@@ -21,6 +21,7 @@ class PresenceSeeder extends Seeder
                     'user_id' => $student->id,
                     'status' => rand(0, 1),
                     'date' => $classroom->date,
+                    'regisred_at' => now(),
                 ]);
             }
         }

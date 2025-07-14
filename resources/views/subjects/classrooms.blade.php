@@ -76,9 +76,15 @@
                                 <span class="{{ $presence->status ? 'text-green-600' : 'text-red-600' }}">
                                     {{ $presence->status ? 'Presente' : 'Ausente' }}
                                 </span>
-                                <span class="text-gray-500 text-sm ml-2">
-                                    (Registrado às {{ \Carbon\Carbon::parse($presence->created_at)->format('H:i:s') }})
-                                </span>
+                                @if ($presence->status)
+                                    <span class="text-gray-500 text-sm ml-2">
+                                        (Registrado às {{ \Carbon\Carbon::parse($presence->regisred_at)->format('H:i:s') }})
+                                    </span>
+                                @else
+                                    <span class="text-gray-500 text-sm ml-2">
+                                        Não registrado
+                                    </span>
+                                @endif
                             @else
                                 <span class="text-gray-500 italic">Não registrado</span>
                             @endif

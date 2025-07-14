@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->boolean('status')->default(false); // false for absent, true for present
             $table->timestamp('date')->useCurrent();
+            $table->time('regisred_at')->nullable();
             $table->timestamps();
         });
     }
