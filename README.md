@@ -1,4 +1,4 @@
-# 🖥️ Check Presence API (Back-end)
+# 🖥️ Check Presence System
 
 API desenvolvida com **Laravel 10+**, responsável pelo gerenciamento de usuários, matérias, aulas e registros de presença para o sistema **Check Presence**. Essa API se comunica com o app mobile via **endpoints REST** autenticados com **Laravel Sanctum**.
 
@@ -6,11 +6,11 @@ API desenvolvida com **Laravel 10+**, responsável pelo gerenciamento de usuári
 
 ## ⚙️ Funcionalidades
 
-- Autenticação via matrícula e senha
+- Autenticação via email e senha
 - Geração e leitura de QR Codes para registrar presença
-- Associação entre alunos e matérias
+- Associação entre professores e matérias
 - Controle de aulas (data, hora, local)
-- Registro de presença com status e horário
+- Controle de frequência com status e horário
 - Exibição de presenças e faltas por matéria
 - Acesso diferenciado para alunos e professores
 
