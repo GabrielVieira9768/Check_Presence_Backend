@@ -39,14 +39,18 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            // Para SPAs Laravel + Sanctum com cookies habilitados, descomente a linha abaixo:
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+
+            // Caso seu app mobile use token Bearer (stateless), mantenha essa linha comentada.
+            
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
 
     /**
-     * The application's middleware aliases.
+     * The application's route middleware aliases.
      *
      * Aliases may be used instead of class names to conveniently assign middleware to routes and groups.
      *
