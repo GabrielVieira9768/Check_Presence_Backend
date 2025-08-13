@@ -1,23 +1,40 @@
-<p align="center"><a href="https://codejr.com.br/" target="_blank"><img src="https://codejr.com.br/wp-content/uploads/elementor/thumbs/Da-uma-olhada-no-design-que-eu-fiz-no-Canva-e1631206678162-pcvbl6lcx3mwo97eg0q4yn4zchcokysbd7aoauowe8.png" width="750" alt="Code"></a></p>
+# 🖥️ Check Presence System
 
-<h1 align="center">
-    Desafio Laravel 2024.1
-</h1>
+API desenvolvida com **Laravel 10+**, responsável pelo gerenciamento de usuários, matérias, aulas e registros de presença para o sistema **Check Presence**. Essa API se comunica com o app mobile via **endpoints REST** autenticados com **Laravel Sanctum**.
 
-## Sobre o desafio
+---
 
-O desafio tem como intuito treinar os novos membros da Code Jr., afim de familiarizarem melhor com o framework desenvolvendo um sitema de gerenciamento interno de uma clínica veterinária, com as funcionalidades definidas no documento de requisitos disponibilizado.
+## ⚙️ Funcionalidades
 
-## Trilha de Laravel
+- Autenticação via email e senha
+- Geração e leitura de QR Codes para registrar presença
+- Associação entre professores e matérias
+- Controle de aulas (data, hora, local)
+- Controle de frequência com status e horário
+- Exibição de presenças e faltas por matéria
+- Acesso diferenciado para alunos e professores
 
-Link: <a href="https://drive.google.com/drive/folders/16U7EIQ58v3ZgeTE-Eh3ivZ_lKretVEFc?usp=sharing">https://drive.google.com/drive/folders/16U7EIQ58v3ZgeTE-Eh3ivZ_lKretVEFc?usp=sharing</a>
+---
 
-## Como executar o projeto
+## 🧱 Tecnologias Utilizadas
+
+- PHP 8.2+
+- Laravel 10+
+- Laravel Sanctum (autenticação de API)
+- MySQL
+- Eloquent ORM
+- Composer
+- Vite + Blade (frontend web opcional)
+- Laravel Breeze (starter kit)
+
+---
+
+## 🚀 Como executar o projeto
 
 Para executar o projeto você deve seguir os seguintes passos:
 
-- Copie o arquivo `.env.example` e renomeie sua cópia para `.env`
-- Crie um banco 'MySql' com o nome de `desafio_laravel_code`
+- Copie o arquivo `.env.example`, renomeie sua cópia para `.env`, altere o  `APP_URL` para seu ip e o `DB_DATABASE` para `check_presence`
+- Crie um banco 'MySql' com o nome de `check_presence`
 - execute o comando: ```composer install```
 - execute o comando: ```php artisan key:generate``` 
 - execute o comando: ```npm install```
